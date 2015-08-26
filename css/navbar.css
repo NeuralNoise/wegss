@@ -1,0 +1,161 @@
+a{
+color:white;
+text-decoration:none;
+}
+.fixnavbarupper{
+top:0px;
+border-width:0 0 1px;
+position:fixed;
+right:0;
+left:0;
+z-index:1030;
+background-color:grey;
+
+height: 50px;
+margin-bottom:;
+color:white;
+padding-right: 0;
+padding-left: 0;
+}
+.navupper{
+font-family:verdana;
+font-size:30px;
+float:left;
+margin-top:5px;
+}
+.fixnavbar{
+top:50px;
+border-width:0 0 1px;
+position:fixed;
+right:0;
+left:0;
+z-index:1030;
+background-color:orange;
+border-color:darkorange;
+border-radius:0;
+height: 50px;
+margin-bottom: 20px;
+color:white;
+padding-right: 0;
+padding-left: 0;
+}
+.navdiv1{
+display:inline;
+background-color:;
+float:left;
+width:1000px;
+height:50px;
+margin-left:100px;
+}
+.navdiv1a{
+font-family:verdana;
+font-size:18px;
+margin-top:16px;
+float:left;
+}
+
+.searchbar{
+font-family:verdana;
+font-size:18px;
+height:26px;
+width:400px;
+margin-top:12px;
+margin-left:40px;
+border:1px solid darkorange;
+border-radius:3px;
+float:left;
+}
+
+.liststyle{
+display:inline;
+padding:6px;
+font-family:verdana;
+font-size:12px;
+float:;
+}
+.active{
+background-color:darkgreen;
+border:1px solid darkgreen;
+border-radius:2px;
+}
+
+#coolMenu,
+#coolMenu ul {
+    list-style: none;
+}
+#coolMenu {
+    float:right;
+}
+#coolMenu > li {
+    float: left;
+}
+#coolMenu li a {
+display: block;
+    height:20px;
+    line-height:20px;
+    padding: 2px;
+    text-decoration: none;
+	color:white;
+	background-color:orange;
+	border-radius:1px;
+}
+#coolMenu ul {
+    position: absolute;
+    display: none;
+}
+
+#coolMenu li:hover ul {
+    display: block;
+}
+
+#coolMenu {
+    font-family: verdana;
+    font-size: 12px;
+    
+}
+#coolMenu > li > a {
+    color: #fff;
+    
+}
+#coolMenu > li:hover > a {
+    background: orange;
+    color: darkgreen;
+}
+ 
+/* Submenu
+------------------------------------------*/
+#coolMenu ul {
+    background:orange;
+}
+#coolMenu ul li a {
+    color: #fff;
+}
+#coolMenu ul li:hover a {
+    color:darkgreen;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menustyle{
+float:left;
+display:inline;
+
+}
