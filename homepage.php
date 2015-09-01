@@ -34,7 +34,10 @@ $country=$row['country'];
   </head>
 
   <body>
-
+	<script src="js/jquery.min.js"></script>
+	<script src="js/gramcover.js"></script>
+	
+	
 		<nav class="fixnavbarupper" >
 		<a href="#" class="navupper">GSS</a>
 		</nav>
@@ -44,12 +47,10 @@ $country=$row['country'];
           <div class="navdiv1">
             <a href="#" class="navdiv1a">GramSwarajSangathan</a>
 		    <input type="text" placeholder="find people" class="searchbar">
-			  <ul style="display:inline;">
-				<li class="liststyle"><img src="img/avatar.png" style="width:40px;height:40px;margin-top:2px;border:2px solid silver;border-radius:3px;"></li>
-			  </ul>
-			  <ul id="coolMenu">
+			<img src="img/avatar.png" style="width:40px;height:40px;margin-top:4px;margin-left:37px;margin-bottom:4px;border:1px solid silver;border-radius:3px;">
+			  <ul id="coolMenu" style="display:inline;">
 				<li class="liststyle"><a href="#"><?php echo $name; ?></a></li>
-				<li class="liststyle active"><a href="#">Home</a></li>
+				<li class="liststyle"><a href="homepage.php">Home</a></li>
 				<li class="liststyle"><a href="#">Account</a>
 					<ul style="box-shadow: 2px 2px 10px #bbb;width:150px;">
 						<li><a href="#">Settings</a></li>
@@ -83,72 +84,41 @@ $country=$row['country'];
 		</div>
 		
 		<!-- middle div -->
-		<div style="margin-left:20px;width:550px;float:left;word-wrap:break-word;background-color:#C1E0F0;border-radius:4px;">
+		<div style="margin-left:20px;width:550px;float:left;word-wrap:break-word;background-color:#eee;border-radius:4px;">
 		
-			<form action="textpost.php" method="post" enctype="multipart/form-data">
+			<form action="statuspost.php" method="post" enctype="multipart/form-data">
 			<p style="font-family:verdana;margin-left:50px;margin-top:20px;color:darkgreen;">Write what is on your mind??</p>
-				<input type="textarea" name="status" style="width:400px;height:70px;font-family:verdana;margin-left:50px;border:1px solid grey;border-radius:4px;word-wrap: break-word;" placeholder="put your thought here!"></input>
-				<button type="submit" style="background-color:orange;color:darkgreen;margin-left:405px;margin-top:5px;border:1px solid darkorange;border-radius:3px;">Post</button>
+				<textarea name="status" style="width:400px;height:70px;font-family:verdana;margin-left:50px;border:1px solid grey;border-radius:4px;word-wrap:break-word;" placeholder="put your thought here!" required></textarea>
+				<button type="submit" name="poststatusbtn" style="background-color:orange;color:darkgreen;margin-left:405px;margin-top:5px;border:1px solid darkorange;border-radius:3px;">Post</button>
 			</form>
 			<form action="photoupload.php" method="post" enctype="multipart/form-data">
 			<p style="font-family:verdana;margin-left:50px;margin-top:20px;color:darkgreen;">Uplaod A Snapshot !!
-				<input type="file" name="file"></br>
+				<input type="file" name="file" required></br>
 			</p>	
-				<input type="textarea" name="caption" style="width:400px;height:40px;font-family:verdana;margin-left:50px;border:1px solid grey;border-radius:4px;word-wrap: break-word;" placeholder="Say Something about this photo!">
+				<textarea name="caption" style="width:400px;height:40px;font-family:verdana;margin-left:50px;border:1px solid grey;border-radius:4px;word-wrap: break-word;" placeholder="Say Something about this photo!"></textarea>
 				
 				<button type="submit" name="photouploadbtn" style="background-color:orange;color:darkgreen;margin-left:405px;margin-top:5px;border:1px solid darkorange;border-radius:3px;">Post</button>
 			</form>
-			
-			
-			<?php    
-				
-				$photodisplayquery = "select * from photo_post where photo_user_id= '".$user_id."' ORDER BY photo_post_update DESC ";
-				$photoresults= mysql_query($photodisplayquery);
-				while($row=mysql_fetch_array($photoresults)){
-					$size=getimagesize("imagesByUsers/".$row['photo_post_name']);
-					$actualwidth=$size['0'];
-					$actualheight=$size['1'];
 					
-					//$ratio=($actualwidth/$actualheight);
 					
-					$displaywidth  = $actualwidth;
-					$displayheight = $actualheight;
 					
-					if($actualwidth>=401){
-						
-						//$widthdiff= ($actualwidth-400);
-						//$diffpercent= (($widthdiff/$actualwidth)*100);
-						
-						//$heightdiff= (($diffpercent/100)*$actualheight);
-						
-						$displaywidth="400";
-						$displayheight=($displaywidth*($actualheight/$actualwidth)); 
-					
-					}
-					
-				echo '
-					<p style="font-family:verdana;margin-left:50px;margin-top:15px;color:darkgreen;font-size:12px;"><a href="#"style="color:darkorange;font-weight:bold;font-size:14px;"> '.$name.' </a> posted an image on '.$row['photo_post_date'].' at '.$row['photo_post_time'].'</p>
-					<img  src="imagesByUsers/'.$row['photo_post_name'].'" style="width:'.$displaywidth.'px;height:'.$displayheight.'px;margin-top:5px;margin-bottom:15px;margin-left:50px;border:2px solid grey;border-radius:4px;">
-				';
-				
-				}
-				
-				
-			
-			
-			
-			
-			?>
-			
+							<div id="results">	
+							</div>	
+							<div id="loader_image"><img src="loader.gif" alt="" style="width:24;height:24;display:block;margin-left: auto;margin-right: auto;">
+							</div>
 			
 		</div>
 		
 		<!-- right div -->
 		<div 
 		style="width:300px;float:left;word-wrap:break-word;margin-left:20px;background-color:#C1E0F0;border-radius:4px;">
-			<p style="margin-left:20px;"><?php echo $user_id; ?></p>
+			<p style="margin-left:20px;">Welcome To Gram Swaraj Sangathan</p>
 		</div>
 	</div>
+	
+<script type="text/javascript">	
+	
+</script>	
 
       
   </body>

@@ -110,9 +110,6 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     
 	<script src="js/jquery.min.js"></script>
-	<script>
-
-	</script>
 	<script src="js/gramcover.js" >	</script>
     
   </head>
@@ -126,9 +123,8 @@
               <h1 class="masthead-brand">ग्राम स्वराज संगठन</h1>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">मुखपृष्ठ</a></li>
-                  <li class=""><a href="#">फोटो गेलरी</a></li>
-				  <li class=""><a href="#">संपर्क</a></li>
+                  <li class="active"><a href="index.php">मुखपृष्ठ</a></li>
+				  
                 </ul>
               </nav>
             </div>
@@ -174,7 +170,9 @@
 						<input type="text" id="country" class="form-control" placeholder="Nationality" name="country" required>
 						</br>
 					<button class="btn btn-lg btn-primary btn-block btn-default"  id="joinBtn" type="submit" name="join">Join</button>
+					<a href="index.php" class="btn btn-lg btn-primary btn-block btn-default" type="submit">Login</a>
 				</form>
+					
 			</div> 
 		  
 			<div class="mastfoot">

@@ -43,7 +43,7 @@ padding-left: 0;
 display:inline;
 background-color:;
 float:left;
-width:1000px;
+width:990px;
 height:50px;
 margin-left:100px;
 }
@@ -96,7 +96,7 @@ display: block;
     padding: 2px;
     text-decoration: none;
 	color:white;
-	background-color:orange;
+	background-color:;
 	border-radius:1px;
 }
 #coolMenu ul {
@@ -110,7 +110,7 @@ display: block;
 
 #coolMenu {
     font-family: verdana;
-    font-size: 12px;
+    font-size: 14px;
     
 }
 #coolMenu > li > a {

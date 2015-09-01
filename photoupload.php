@@ -15,7 +15,7 @@
 		$time = date('h:i:s');
  
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-             
+		
             $name     = $_FILES['file']['name'];
             $tmpName  = $_FILES['file']['tmp_name'];
             $error    = $_FILES['file']['error'];
@@ -44,7 +44,7 @@
                         move_uploaded_file($tmpName,$targetPath);
 						$caption  = $_POST['caption'];
 						
-						$query= "INSERT INTO `photo_post`(`photo_user_id`, `photo_post_name`, `photo_post_date`, `photo_post_time`) VALUES ($user_id, '$name', '$date', '$time')";
+						$query= "INSERT INTO `post`(`post_user_id`, `photo_post_name`, `photo_post_caption`, `post_date`, `post_time`) VALUES ($user_id, '$name', '$caption', '$date', '$time')";
 						mysql_query($query);
 						
                         header( 'Location: homepage.php' ) ;
